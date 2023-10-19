@@ -8,8 +8,9 @@ import (
 func TestClass_Map(t *testing.T) {
 
 	type fields struct {
-		ID   string
-		Name string
+		ID               string
+		Name             string
+		StudentsEnrolled int
 	}
 
 	tests := []struct {
@@ -20,12 +21,14 @@ func TestClass_Map(t *testing.T) {
 		{
 			name: " success - class struct to map",
 			fields: fields{
-				ID:   "12345",
-				Name: "ali",
+				ID:               "12345",
+				Name:             "ali",
+				StudentsEnrolled: 22,
 			},
 			want: map[string]interface{}{
-				"id":   "12345",
-				"name": "ali",
+				"id":               "12345",
+				"name":             "ali",
+				"studentsEnrolled": 22,
 			},
 		},
 		{
@@ -34,16 +37,18 @@ func TestClass_Map(t *testing.T) {
 				Name: "ali",
 			},
 			want: map[string]interface{}{
-				"id":   "",
-				"name": "ali",
+				"id":               "",
+				"name":             "ali",
+				"studentsEnrolled": 0,
 			},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := &Class{
-				ID:   tt.fields.ID,
-				Name: tt.fields.Name,
+				ID:               tt.fields.ID,
+				Name:             tt.fields.Name,
+				StudentsEnrolled: tt.fields.StudentsEnrolled,
 			}
 			if got := s.Map(); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Map() = %v, want %v", got, tt.want)
@@ -55,8 +60,9 @@ func TestClass_Map(t *testing.T) {
 
 func TestClass_Names(t *testing.T) {
 	type fields struct {
-		ID   string
-		Name string
+		ID               string
+		Name             string
+		StudentsEnrolled int
 	}
 	tests := []struct {
 		name   string
@@ -75,8 +81,9 @@ func TestClass_Names(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := &Class{
-				ID:   tt.fields.ID,
-				Name: tt.fields.Name,
+				ID:               tt.fields.ID,
+				Name:             tt.fields.Name,
+				StudentsEnrolled: tt.fields.StudentsEnrolled,
 			}
 			if got := s.Names(); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("Names() = %v, want %v", got, tt.want)

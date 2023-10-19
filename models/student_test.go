@@ -11,7 +11,7 @@ func TestStudent_Map(t *testing.T) {
 		ID      string
 		Name    string
 		Age     string
-		GPA     float64
+		CGPA    float64
 		ClassID string
 	}
 
@@ -26,14 +26,14 @@ func TestStudent_Map(t *testing.T) {
 				ID:      "12345",
 				Name:    "asif",
 				Age:     "22",
-				GPA:     3.23,
+				CGPA:    3.23,
 				ClassID: "1",
 			},
 			want: map[string]interface{}{
 				"id":      "12345",
 				"name":    "asif",
 				"age":     "22",
-				"gpa":     3.23,
+				"cgpa":    3.23,
 				"classID": "1",
 			},
 		},
@@ -47,7 +47,7 @@ func TestStudent_Map(t *testing.T) {
 				"id":      "",
 				"name":    "asif",
 				"age":     "22",
-				"gpa":     0.0,
+				"cgpa":    0.0,
 				"classID": "",
 			},
 		},
@@ -58,7 +58,7 @@ func TestStudent_Map(t *testing.T) {
 				ID:      tt.fields.ID,
 				Name:    tt.fields.Name,
 				Age:     tt.fields.Age,
-				GPA:     tt.fields.GPA,
+				CGPA:    tt.fields.CGPA,
 				ClassID: tt.fields.ClassID,
 			}
 			if got := s.Map(); !reflect.DeepEqual(got, tt.want) {
@@ -74,7 +74,7 @@ func TestStudent_Names(t *testing.T) {
 		ID      string
 		Name    string
 		Age     string
-		GPA     float64
+		CGPA    float64
 		ClassID string
 	}
 	tests := []struct {
@@ -88,10 +88,10 @@ func TestStudent_Names(t *testing.T) {
 				ID:      "12345",
 				Name:    "asif",
 				Age:     "22",
-				GPA:     3.23,
+				CGPA:    3.23,
 				ClassID: "1",
 			},
-			want: []string{"id", "name", "age", "gpa", "classID"},
+			want: []string{"id", "name", "age", "cgpa", "classID"},
 		},
 	}
 	for _, tt := range tests {
@@ -100,7 +100,7 @@ func TestStudent_Names(t *testing.T) {
 				ID:      tt.fields.ID,
 				Name:    tt.fields.Name,
 				Age:     tt.fields.Age,
-				GPA:     tt.fields.GPA,
+				CGPA:    tt.fields.CGPA,
 				ClassID: tt.fields.ClassID,
 			}
 			if got := s.Names(); !reflect.DeepEqual(got, tt.want) {

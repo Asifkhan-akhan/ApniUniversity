@@ -3,9 +3,9 @@ package models
 import "github.com/fatih/structs"
 
 type Class struct {
-	ID   string `json:"id" structs:"id" bson:"_id" db:"id"`
-	Name string `json:"name" structs:"name" bson:"name" db:"name"`
-	//CourseID string `json:"courseID" structs:"courseID" bson:"courseID" db:"courseID"`
+	ID               string `json:"id" structs:"id" bson:"_id" db:"id"`
+	Name             string `json:"name" structs:"name" bson:"name" db:"name"`
+	StudentsEnrolled int    `json:"studentsEnrolled" structs:"studentsEnrolled" bson:"studentsEnrolled" db:"studentsEnrolled"`
 }
 
 // Map converts structs to a map representation

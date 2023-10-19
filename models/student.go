@@ -8,7 +8,7 @@ type Student struct {
 	ID      string  `json:"id" structs:"id" bson:"_id" db:"id"`
 	Name    string  `json:"name" structs:"name" bson:"name" db:"name"`
 	Age     string  `json:"age" structs:"age" bson:"age" db:"age"`
-	GPA     float64 `json:"gpa" structs:"gpa" bson:"gpa" db:"gpa"`
+	CGPA    float64 `json:"cgpa" structs:"cgpa" bson:"cgpa" db:"cgpa"`
 	ClassID string  `json:"classID" structs:"classID" bson:"classID" db:"classID"`
 }
 
